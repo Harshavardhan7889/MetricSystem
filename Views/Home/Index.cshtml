@@ -1,0 +1,20 @@
+﻿@using MetricSystem.Models
+@model MetricConv
+@{
+    ViewData["Title"] = "Convert Fahrenheit to Celceius";
+}
+<h1>Convert Fahrenheit to Celceius</h1>
+<form asp-action="Index" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="FValue">Fahrenheit Value:</label>
+        <input asp-for="FValue" />
+    </div>
+    
+    <div>
+        <label>Celsius Value:</label>
+        <input value="@ViewBag.Cv.ToString()" readonly>
+    </div>
+    <button type="submit">Calculate</button>
+    <a asp-action="Index">Clear</a>
+</form>
